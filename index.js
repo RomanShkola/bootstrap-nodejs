@@ -5,6 +5,8 @@ var path = require('path');
 
 var projectPath = __dirname + '/';
 
+var port = process.env.PORT || 8081;
+
 app.use(express.static('public'));
 
 router.use(function (req,res,next) {
@@ -18,6 +20,6 @@ router.get("/",function(req,res){
 app.use("/",router);
 
 
-app.listen(8081, function () {
+app.listen(port, function () {
 	console.log('Example app listening on port 8081!')
 })
